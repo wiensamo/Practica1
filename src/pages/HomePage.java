@@ -9,20 +9,17 @@ import org.openqa.selenium.support.ui.Select;
 
 public class HomePage {
 
-	private static final String frm = null;
-	private static final String toc = null;
-	
 	WebDriver driver;
 	
-	public void Homepage(WebDriver driver) {
+	public HomePage(WebDriver driver) {
 		this.driver=driver;
 	}
 	
 	By calendarId 		= By.id("ctl00_mainContent_ddl_originStation1_CTXT"); 
-	By calendarFrom 	= By.xpath("//a[@value='"+frm+"']");
-	By calendarTo 		= By.xpath("(//a[@value='"+toc+"'])[2]");
 	
-	public  void completeCalendar () {
+	public  void completeCalendar (String frm, String toc) {
+		By calendarFrom     = By.xpath("//a[@value='"+frm+"']");
+		By calendarTo 		= By.xpath("(//a[@value='"+toc+"'])[2]");
 		driver.findElement(calendarId).click();
 		driver.findElement(calendarFrom).click();
 		driver.findElement(calendarTo).click();
@@ -136,7 +133,20 @@ public class HomePage {
 		driver.findElement(closePopUp).click();
 	}
 	
+	By tableTrip1 		= By.id("ctl00_mainContent_ddl_originStation1_CTXT");
+	By tableTrip2 		= By.id("ctl00_mainContent_ddl_originStation2_CTXT");
+	By tableTrip3 		= By.id("ctl00_mainContent_ddl_originStation3_CTXT");
+	By tableTrip4		= By.id("ctl00_mainContent_ddl_originStation4_CTXT");
+	By tableTrip5 		= By.id("ctl00_mainContent_ddl_originStation5_CTXT");
+	By selectCity		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation1_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[href='#']");
 	
-	
+	public void selectMultiTrip (int numtrip, String tripfrom1,String tripto1, String tripfrom2
+			,String tripto2, String tripfrom3,String tripto3, String tripfrom4,String tripto4, String tripfrom5,String tripto5) {
+		switch(numtrip) {
+		case 1: 
+			driver.findElement(tableTrip1).click();
+			
+		}
+	}
 	
 }
