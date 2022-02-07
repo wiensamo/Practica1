@@ -138,13 +138,81 @@ public class HomePage {
 	By tableTrip3 		= By.id("ctl00_mainContent_ddl_originStation3_CTXT");
 	By tableTrip4		= By.id("ctl00_mainContent_ddl_originStation4_CTXT");
 	By tableTrip5 		= By.id("ctl00_mainContent_ddl_originStation5_CTXT");
-	By selectCity		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation1_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[href='#']");
+	
 	
 	public void selectMultiTrip (int numtrip, String tripfrom1,String tripto1, String tripfrom2
 			,String tripto2, String tripfrom3,String tripto3, String tripfrom4,String tripto4, String tripfrom5,String tripto5) {
+		
+		By selectCity1		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation1_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripfrom1+"']");
+		By selectCity2		= By.cssSelector("td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripto1+"']");
+		By selectCity21		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation2_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripfrom2+"']");
+		By selectCity22		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation2_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripto2+"']");
+		By selectCity31		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation3_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripfrom3+"']");
+		By selectCity32		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation3_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripto3+"']");
+		By selectCity41		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation4_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripfrom4+"']");
+		By selectCity42		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation4_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripto4+"']");
+		By selectCity51		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation5_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripfrom5+"']");
+		By selectCity52		= By.cssSelector("div[id='ctl00_mainContent_ddl_originStation5_CTNR'] td[class='mapbg'] div[class='dropdownDiv'] a[value='"+tripto5+"']");
+		By btnmore1 		= By.cssSelector("input[id='btnAddMore1']");
 		switch(numtrip) {
 		case 1: 
 			driver.findElement(tableTrip1).click();
+			driver.findElement(selectCity1).click();			
+			driver.findElement(selectCity2).click();
+			break;
+		case 2:
+			driver.findElement(tableTrip1).click();
+			driver.findElement(selectCity1).click();			
+			driver.findElement(selectCity2).click();
+			driver.findElement(tableTrip2).click();			
+			driver.findElement(selectCity21).click();	
+			driver.findElement(selectCity22).click();
+			break;
+		case 3:
+			driver.findElement(tableTrip1).click();
+			driver.findElement(selectCity1).click();			
+			driver.findElement(selectCity2).click();
+			driver.findElement(tableTrip2).click();			
+			driver.findElement(selectCity21).click();	
+			driver.findElement(selectCity22).click();
+			driver.findElement(tableTrip3).click();
+			driver.findElement(selectCity31).click();
+			driver.findElement(selectCity32).click();
+			break;
+		case 4:
+			driver.findElement(tableTrip1).click();
+			driver.findElement(selectCity1).click();			
+			driver.findElement(selectCity2).click();
+			driver.findElement(tableTrip2).click();			
+			driver.findElement(selectCity21).click();	
+			driver.findElement(selectCity22).click();
+			driver.findElement(tableTrip3).click();
+			driver.findElement(selectCity31).click();
+			driver.findElement(selectCity32).click();
+			driver.findElement(btnmore1);
+			driver.findElement(tableTrip4).click();
+			driver.findElement(selectCity41).click();
+			driver.findElement(selectCity42).click();
+			break;
+		case 5: 
+			driver.findElement(tableTrip1).click();
+			driver.findElement(selectCity1).click();			
+			driver.findElement(selectCity2).click();
+			driver.findElement(tableTrip2).click();			
+			driver.findElement(selectCity21).click();	
+			driver.findElement(selectCity22).click();
+			driver.findElement(tableTrip3).click();
+			driver.findElement(selectCity31).click();
+			driver.findElement(selectCity32).click();
+			driver.findElement(btnmore1);
+			driver.findElement(tableTrip4).click();
+			driver.findElement(selectCity41).click();
+			driver.findElement(selectCity42).click();
+			driver.findElement(btnmore1);
+			driver.findElement(tableTrip5).click();
+			driver.findElement(selectCity51).click();
+			driver.findElement(selectCity52).click();
+			break;
 			
 		}
 	}

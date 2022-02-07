@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,6 +14,7 @@ public class Page_Test {
 		System.setProperty("webdriver.chrome.driver", "/Users/wilson.sacnhezm/Documents/Selenium tools/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		
 		HomePage homePage = new HomePage(driver);
 		
@@ -21,6 +24,9 @@ public class Page_Test {
 		homePage.selectDates("March", "30");
 		homePage.selectPassengers(2, 1, 1);
 		homePage.selectCurrency("USD");
+		
+		homePage.selectTrip("TripPlanner");
+		homePage.selectMultiTrip(3, "VTZ", "DAC", "GOI", "IXJ", "ATQ", "CCU", null, null, null, null);
 		
 		
 		
