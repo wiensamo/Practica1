@@ -26,7 +26,7 @@ public class Page_Test {
 		homePage.selectCurrency("USD");
 		
 		homePage.selectTrip("TripPlanner");
-		homePage.selectMultiTrip(3, "VTZ", "DAC", "GOI", "IXJ", "ATQ", "CCU", null, null, null, null);
+		homePage.selectMultiTrip(2, "VTZ", "DAC", "GOI", "IXJ", null, null, null, null, null, null);
 		
 		
 		
