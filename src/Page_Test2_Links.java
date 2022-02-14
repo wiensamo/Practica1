@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -7,7 +8,7 @@ import pages.PageLinks;
 
 public class Page_Test2_Links {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver", "/Users/wilson.sacnhezm/Documents/Selenium tools/chromedriver");
@@ -17,7 +18,10 @@ public class Page_Test2_Links {
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		PageLinks pageLinks = new PageLinks(driver);
 		
-		pageLinks.linksFirstColumn();
+		//pageLinks.linksFirstColumn();
+		//pageLinks.Screenshot();
+		pageLinks.worksLinks();
+		
 	}
 
 }
