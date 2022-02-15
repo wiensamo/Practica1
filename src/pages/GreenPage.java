@@ -54,9 +54,10 @@ public class GreenPage {
 	public void validateSearchField() {
 		driver.findElement(veggieWrite).sendKeys("Rice");
 		List<WebElement> vaggies = driver.findElements(elemt);
-		for (WebElement webElement : vaggies) {
-			System.out.println(webElement.getText());
-		}
+		List<WebElement> filterVaggie =  vaggies.stream().filter(vaggie->vaggie.getText().contains("Rice")).collect(Collectors.toList());
+		Assert.assertEquals(vaggies.size(), filterVaggie.size());
 	}
+	
+	
 	
 }
