@@ -37,14 +37,11 @@ public class GreenPageTest {
 
 
 		GreenPage greenPage = new GreenPage(driver);		
-		greenPage.findElement();
+		greenPage.validateSearchField();
 		
 	}
 
-	private static String getPriceVeggie(WebElement s) {
-		String pricevalue = s.findElement(By.xpath("following-sibling::td[1]")).getText();
-		return pricevalue;
-
-	}
+	
 
 }
+	

@@ -15,7 +15,7 @@ public class GreenPage {
 		this.driver=driver;
 	}
 	
-	By elemt = By.xpath("//tr/th[1]");
+	By elemt = By.xpath("//tr/td[1]");
 	By nextTo = By.xpath("following-sibling::td[1]");
 	By next = By.cssSelector("[aria-label='Next']");
 	
@@ -48,5 +48,15 @@ public class GreenPage {
 
 	}
 	
+	
+	By veggieWrite = By.id("search-field");
+	
+	public void validateSearchField() {
+		driver.findElement(veggieWrite).sendKeys("Rice");
+		List<WebElement> vaggies = driver.findElements(elemt);
+		for (WebElement webElement : vaggies) {
+			System.out.println(webElement.getText());
+		}
+	}
 	
 }
